@@ -26,7 +26,6 @@
  * - emit_log_hook
  * - send_message_to_server_log
  * - send_message_to_frontend
- * - pgwin32_dispatch_queued_signals
  * - set_stack_entry_location
  * - matches_backtrace_functions
  * - backtrace_symbol_list
@@ -45,9 +44,6 @@
  * - errcontext_msg
  * - CopyErrorData
  * - FlushErrorState
- * - pg_signal_queue
- * - pg_signal_mask
- * - pgwin32_dispatch_queued_signals
  *--------------------------------------------------------------------
  */
 
@@ -1934,10 +1930,3 @@ write_stderr(const char *fmt,...)
  * hard-to-explain kluge.
  */
 
-#ifdef WIN32
-__thread volatile int pg_signal_queue;
-
-__thread int pg_signal_mask;
-
-void pgwin32_dispatch_queued_signals(void) {}
-#endif

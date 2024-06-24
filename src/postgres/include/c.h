@@ -1375,5 +1375,3 @@ typedef intptr_t sigjmp_buf[5];
 #include "port.h"
 
 #endif							/* C_H */
-#undef StaticAssertDecl
-#define StaticAssertDecl(condition, errmessage)

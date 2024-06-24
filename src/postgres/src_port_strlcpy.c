@@ -39,7 +39,6 @@
  */
 
 #include "c.h"
-#if HAVE_DECL_STRLCPY == 0
 
 
 /*
@@ -76,4 +75,3 @@ strlcpy(char *dst, const char *src, size_t siz)
 
 	return (s - src - 1);		/* count does not include NUL */
 }
-#endif // HAVE_DECL_STRLCPY == 0
